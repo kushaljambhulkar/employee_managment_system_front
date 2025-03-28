@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { createEmployee, getEmployee, updateEmployee } from '../services/EmployeeService'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
+
 const EmployeeComponent = () => {
 
   const [firstName, setFirstName] = useState('')
@@ -31,6 +32,54 @@ const EmployeeComponent = () => {
       })
     }
   }, [id])
+  const EmployeeForm = () => {
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [errors, setErrors] = useState({});
+  
+    const validateForm = () => {
+      let newErrors = {};
+  
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        newErrors.email = "Invalid email format";
+      }
+  
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (validateForm()) {
+        alert("Form submitted successfully!");
+      }
+    };
+  
+    return (
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter email"
+          />
+          {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+        </div>
+        <div>
+          <input
+            type="text"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="Enter phone number"
+          />
+          {errors.phone && <p style={{ color: "red" }}>{errors.phone}</p>}
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  };
+  
   //best practice to use the javascript fucntion remove the fuction method to const and you can use arrow function, also restructure the code and use this arrow function directly in to the onChange method in return
   // const handleFirstName = (e) => setFirstName(e.target.value);
   // const handleLastName = (e) => setLastName(e.target.value);
@@ -80,11 +129,16 @@ const EmployeeComponent = () => {
       valid = false;
     }
 
-    if(email.trim()){
-      errorsCopy.email = '';
+    if (email.trim()) {
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+          errorsCopy.email = 'Invalid email format';
+          valid = false;
+      } else {
+          errorsCopy.email = '';
+      }
     } else {
-      errorsCopy.email = 'Email is required';
-      valid = false;
+        errorsCopy.email = 'Email is required';
+        valid = false;
     }
 
     if(department.trim()){
@@ -106,11 +160,17 @@ const EmployeeComponent = () => {
       return <h2 className='text-center'>Add Employee</h2>
     }
   }
+
+  const clearForm = () => {
+    navigate("/employees");
+  };
+
+  
   return (
     <div className='container'>
       <br /> <br />
       <div className='row'>
-        <div className='card col-md-6 offset-md-3 offset-md-3'>
+        <div className='card col-md-6 text-bg-light border-success offset-md-3 offset-md-3'>
           {
             pageTitle()
           }
@@ -172,7 +232,9 @@ const EmployeeComponent = () => {
                 {errors.department && <div className='invalid-feedback'> {errors.email}</div>}
               </div>
 
-              <button className='btn btn-success' onClick={saveOrUpdateEmployee}> Submit </button>
+              <button className='btn btn-dark' onClick={clearForm} > Clear Form </button>
+              <button className='btn btn-success' onClick={saveOrUpdateEmployee} style={{marginLeft: '10px'}}> Submit </button>
+
             </form>
 
           </div>
