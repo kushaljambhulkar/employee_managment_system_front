@@ -1,8 +1,120 @@
-# React + Vite
+<!-----
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You have some errors, warnings, or alerts. If you are using reckless mode, turn it off to see inline alerts.
+* ERRORs: 0
+* WARNINGs: 0
+* ALERTS: 2
 
-Currently, two official plugins are available:
+Conversion time: 1.326 seconds.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Using this HTML file:
+
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β44
+* Sun Apr 13 2025 22:40:54 GMT-0700 (PDT)
+* Source doc: Functional Specification Document
+* This document has images: check for >>>>>  gd2md-html alert:  inline image link in generated source and store images to your server. NOTE: Images in exported zip file from Google Docs may not appear in  the same order as they do in your doc. Please check the images!
+
+----->
+
+
+<h1 style="text-align: center">Functional Specification: Employee Management System Application</h1>
+
+
+<hr>
+<p>
+<strong>1. Project Overview:</strong>
+</p>
+<ul>
+
+<li><strong>Project Name:</strong> Employee Management System Application</li>
+
+<li><strong>Project Goal:</strong> To provide a simple web-based application for managing employee information, allowing users to Create, Read, Update, and Delete employee records.</li>
+
+<li><strong>Version</strong>: 1.0<br><strong>Date</strong>: 19/12/2024</li>
+
+<li><strong>Developer</strong>: Kushal Jambhulkar</li>
+</ul>
+<p>
+<strong>2. Scope:</strong>
+</p>
+<ul>
+
+<li>Displaying a list of employees with their basic details.</li>
+
+<li>Adding new employee records with fields for First Name, Last Name, Email, and Department.</li>
+
+<li>Updating existing employee records with the same fields.</li>
+
+<li>Deleting employee records.</li>
+
+<li>A separate page for adding new employees.</li>
+</ul>
+<p>
+<strong>3. User Stories:</strong>
+</p>
+<ul>
+
+<li>As a user, I want to see a list of all employees on the home page.</li>
+
+<li>As a user, I want to be able to add a new employee to the system by filling out a form.</li>
+
+<li>As a user, I want to be able to edit the details of an existing employee.</li>
+
+<li>As a user, I want to be able to remove an employee from the system.</li>
+</ul>
+<p>
+<strong>4. Functional Requirements:</strong>
+</p>
+<p>
+<strong>Home Page (See Employees):</strong>
+</p>
+<ul>
+
+<li><strong>Show List:</strong> See a table of all employees.</li>
+
+<li><strong>Add Button:</strong> "Add Employee" to make new ones. Click it, goes to the add page.</li>
+
+<li><strong>Edit Button:</strong> In the Action for each employee, there's an "Update" button. Click it, goes to the update form but it's already filled with their info so you can change it.</li>
+
+<li><strong>Remove Button:</strong> Also in Action, a "Delete" button. Click it. Employee gone from the list.</li>
+</ul>
+<p>
+<strong>Simple Diagram: Home Page</strong>
+</p>
+<p>
+<strong>4.2. Add Employee Page:</strong>
+</p>
+<p>
+<strong>Add Employee Page (Make New Ones):</strong>
+</p>
+<ul>
+
+<li><strong>Form Time:</strong> See blanks to fill: First Name, Last Name, Email, Department. You type in these boxes.</li>
+
+<li><strong>Done Button:</strong> Button says "Submit". Click it, the info you typed gets saved. Done!</li>
+
+<li><strong>Clear Button:</strong> Button says "Clear Form". Click it, all the boxes go empty again.</li>
+</ul>
+
+<strong>4.3. Update Employee:</strong>
+</p>
+<ul>
+
+<li>"Update" selection, the Add Employee form pre-populates with the employee's data.</li>
+
+<li>Submitting the modified form updates the employee record and refreshes the list.</li>
+</ul>
+
+<strong>4.4. Delete Employee:</strong>
+</p>
+<ul>
+
+<li>Remove an employee record from the database.
