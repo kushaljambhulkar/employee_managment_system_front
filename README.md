@@ -49,4 +49,3 @@ Follow these steps to run the ReactJS frontend application on your local machine
 6.  **Access the application:**
     * Once the development server is running, open your web browser and navigate to `http://localhost:3000`. This is the default port for Create React App and many other React setups. Check your terminal output for the exact URL if it's different.
 
-That's it! By following these steps, you should be able to run your ReactJS frontend application locally.
